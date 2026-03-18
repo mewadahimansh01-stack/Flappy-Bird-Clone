@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://d10gqbmajf4ck"]
+
+[ext_resource type="PackedScene" uid="uid://ujhsccd8k6gn" path="res://Scenes/Background.tscn" id="1_idj7w"]
+[ext_resource type="Texture2D" uid="uid://bvpaa1cdown2s" path="res://Game Assets/Bird.png" id="2_kln2b"]
+[ext_resource type="Script" uid="uid://dyfkptmqyldn" path="res://Scripts/Player.gd" id="2_rgh2o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgh2o"]
+atlas = ExtResource("2_kln2b")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbw6q"]
+atlas = ExtResource("2_kln2b")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1gob"]
+atlas = ExtResource("2_kln2b")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jw32o"]
+atlas = ExtResource("2_kln2b")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50glp"]
+atlas = ExtResource("2_kln2b")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vy5pj"]
+atlas = ExtResource("2_kln2b")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bmxlf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgh2o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbw6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v1gob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jw32o")
+}],
+"loop": true,
+"name": &"Flap",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50glp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vy5pj")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_idj7w"]
+radius = 6.0827627
+
+[node name="Main" type="Node2D" unique_id=1066092136]
+
+[node name="Background" parent="." unique_id=1620942595 instance=ExtResource("1_idj7w")]
+
+[node name="Player" type="RigidBody2D" parent="." unique_id=1584479139]
+position = Vector2(256, 128)
+script = ExtResource("2_rgh2o")
+
+[node name="Bird" type="AnimatedSprite2D" parent="Player" unique_id=1984760815]
+sprite_frames = SubResource("SpriteFrames_bmxlf")
+animation = &"Idle"
+
+[node name="Collision Shape" type="CollisionShape2D" parent="Player" unique_id=582427103]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_idj7w")

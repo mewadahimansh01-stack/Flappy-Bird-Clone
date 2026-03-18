@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://ujhsccd8k6gn"]
+
+[ext_resource type="Shader" uid="uid://c52qn5lbbssx5" path="res://Shader Files/Background Image.gdshader" id="1_laxsj"]
+[ext_resource type="Texture2D" uid="uid://ci3qwopqredje" path="res://Game Assets/Background.png" id="2_etw40"]
+[ext_resource type="Shader" uid="uid://dukg4kewqt6re" path="res://Shader Files/Platform.gdshader" id="3_27ak2"]
+[ext_resource type="Texture2D" uid="uid://cmqrv7028xjo8" path="res://Game Assets/Platform.png" id="4_7kl6s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rgh2o"]
+shader = ExtResource("1_laxsj")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pbw6q"]
+shader = ExtResource("3_27ak2")
+
+[node name="Background" type="Node2D" unique_id=1620942595]
+
+[node name="Background Image" type="Sprite2D" parent="." unique_id=1029687756]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_rgh2o")
+position = Vector2(256, 128)
+texture = ExtResource("2_etw40")
+
+[node name="Platform" type="Sprite2D" parent="." unique_id=524555395]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_pbw6q")
+position = Vector2(256, 240)
+texture = ExtResource("4_7kl6s")
