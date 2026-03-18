@@ -1,16 +1,8 @@
-; Engine configuration file.
-; It's best edited using the editor UI and not directly,
-; since the parameters that go here are not all obvious.
-;
-; Format:
-;   [section] ; section goes between []
-;   param=value ; assign values to parameters
-
 config_version=5
 
 [application]
 
-config/name="Main"
+config/name="Flappy Bird Clone"
 run/main_scene="uid://d10gqbmajf4ck"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="uid://dp3xkxy25s1im"

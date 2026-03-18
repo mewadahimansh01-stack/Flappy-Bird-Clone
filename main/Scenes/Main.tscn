@@ -74,6 +74,6 @@ script = ExtResource("2_rgh2o")
 sprite_frames = SubResource("SpriteFrames_bmxlf")
 animation = &"Idle"
 
-[node name="Collision Shape" type="CollisionShape2D" parent="Player" unique_id=582427103]
+[node name="CollisionShape" type="CollisionShape2D" parent="Player" unique_id=582427103]
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_idj7w")
