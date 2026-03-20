@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://l34jwq0bdvlm"]
+
+[ext_resource type="Script" uid="uid://dqwuqgju6vu43" path="res://Scripts/Pipe.gd" id="1_nq301"]
+[ext_resource type="Texture2D" uid="uid://c3tua1dq5ima2" path="res://Game Assets/Pipe.png" id="2_t5chl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pbw6q"]
+size = Vector2(31.333313, 119.333336)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v1gob"]
+size = Vector2(31.333313, 121.33334)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jw32o"]
+size = Vector2(30.666656, 62)
+
+[node name="Pipe" type="StaticBody2D" unique_id=532411608]
+light_mask = 2
+visibility_layer = 2
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_nq301")
+
+[node name="PipeAbove" type="Sprite2D" parent="." unique_id=421078996]
+position = Vector2(0, -87)
+scale = Vector2(1, 1.525)
+texture = ExtResource("2_t5chl")
+
+[node name="PipeBelow" type="Sprite2D" parent="." unique_id=1699271787]
+position = Vector2(0, 98.5)
+scale = Vector2(1, 1.5625)
+texture = ExtResource("2_t5chl")
+
+[node name="PipeTop" type="CollisionShape2D" parent="." unique_id=2127456727]
+position = Vector2(-0.3333435, -87)
+shape = SubResource("RectangleShape2D_pbw6q")
+
+[node name="PipeBottom" type="CollisionShape2D" parent="." unique_id=1246056042]
+position = Vector2(-0.3333435, 97.333336)
+shape = SubResource("RectangleShape2D_v1gob")
+
+[node name="ScoreUpdater" type="CollisionShape2D" parent="." unique_id=441963272]
+position = Vector2(-6.1035156e-05, 5.666664)
+shape = SubResource("RectangleShape2D_jw32o")
+disabled = true
